@@ -13,7 +13,8 @@ int flickerSolution();
 
 int globalIdx = 0;
 //Sample Flicker values for different Vcom Register Values.{0, 32, 64, 96, 128, 160, 192, 224, 255}
-int A[ARRAY_SIZE] = {84, 111, 119, 117, 96, 45, 33, 86, 114};
+int A[ARRAY_SIZE] = {119, 134, 132, 105, 45, 32, 96, 122, 131};
+//int A[ARRAY_SIZE] = {84, 111, 119, 117, 96, 45, 33, 86, 114};
 //int A[ARRAY_SIZE] = {114, 86, 33, 45, 96, 117, 119, 111, 84};
 //int A[ARRAY_SIZE] = {72, 60, 48, 36, 22 ,10, 10, 20, 30}; 
 //int A[ARRAY_SIZE] = {50, 35, 22, 10, 4, 15, 30, 42, 54};
@@ -84,7 +85,8 @@ int flickerSolution()
 	{	
 
 		//Find the side of local minima: left of center OR right of center?
-		if(abs(iArrFlickerVal[0] - iArrFlickerVal[1]) < abs(iArrFlickerVal[1] - iArrFlickerVal[2]))
+		if( iArrFlickerVal[0] < iArrFlickerVal[1] && iArrFlickerVal[1] < iArrFlickerVal[2] \
+			|| abs(iArrFlickerVal[0] - iArrFlickerVal[1]) < abs(iArrFlickerVal[1] - iArrFlickerVal[2]))
 		{
 			//local minima at the left of center
 			iArrRegVal[2] = iArrRegVal[1];
