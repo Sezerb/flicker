@@ -85,6 +85,7 @@ int flickerSolution()
 	{	
 
 		//Find the side of local minima: left of center OR right of center?
+		//Compare whether the flicker values are in increasing order first.
 		if( iArrFlickerVal[0] < iArrFlickerVal[1] && iArrFlickerVal[1] < iArrFlickerVal[2] \
 			|| abs(iArrFlickerVal[0] - iArrFlickerVal[1]) < abs(iArrFlickerVal[1] - iArrFlickerVal[2]))
 		{
